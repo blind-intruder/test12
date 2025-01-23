@@ -39,11 +39,11 @@ for x, y, duration in actions:
         pag.click(x, y, duration=duration)
     if (x, y) in [(291, 250), (310, 338)]:
         # For "first fill" and "second fill" coordinates, type the desired text
-        #pag.keyDown('D')  # Press the "D" key
+        pag.keyDown('D')  # Press the "D" key
         text_to_type = "PakIstan@098!23"
         pag.typewrite(text_to_type)
 
-time.sleep(2)
+#time.sleep(2)
 im1 = pag.screenshot()
 im2 = pag.screenshot(r'C:\Users\Public\Desktop\my_screenshot.png')
 files = open(r'C:\Users\Public\Desktop\my_screenshot.png', 'rb')
@@ -58,10 +58,10 @@ def save_echo_to_batch(file_path, echo_text):
 
 def run_rustdesk_command():
     clipboard_text = pyperclip.paste()
-    password_echo = 'Password : PakIstan@098!23'  
+    password_echo = 'Password : DPakIstan@098!23'  
     save_echo_to_batch('show.bat', f'RustDesk ID: {clipboard_text}')
     save_echo_to_batch('show.bat', password_echo)
-    time.sleep(2)
+    #time.sleep(2)
     im2 = pag.screenshot()
     im3 = pag.screenshot(r'C:\Users\Public\Desktop\my_screenshot1.png')
     files1 = open(r'C:\Users\Public\Desktop\my_screenshot1.png', 'rb')
