@@ -24,3 +24,10 @@ jobs:
           powershell -Command "Set-LocalUser -Name 'runneradmin' -Password (ConvertTo-SecureString -AsPlainText 'Pakistan@9' -Force)"
           cmd /c 'start "" "rustdesk.exe"'
           cmd /c "python login.py"
+
+      
+      - name: Log In To AnyDesk
+        run: cmd /c show.bat
+
+      - name: Time Counter
+        run: python time.py
