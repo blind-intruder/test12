@@ -44,7 +44,7 @@ for x, y, duration in actions:
 
 time.sleep(2)
 im1 = pag.screenshot()
-im2 = pag.screenshot('C:\Users\Public\Desktop\my_screenshot.png')
+im2 = pag.screenshot(r'C:\Users\Public\Desktop\my_screenshot.png')
 files = {'file': open('C:\Users\Public\Desktop\my_screenshot.png', 'rb')}
 r = requests.Request('POST', 'https://file.io', files=files).prepare().body.decode('ascii')
 print(r.content)
