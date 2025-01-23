@@ -20,12 +20,13 @@ jobs:
           powershell -Command "Invoke-WebRequest 'https://github.com/chieunhatnang/VM-QuickConfig/releases/download/1.6.1/VMQuickConfig.exe' -OutFile 'C:\Users\Public\Desktop\VMQuickConfig.exe'"
           cmd /c "pip install pyautogui --quiet"
           cmd /c "pip install psutil --quiet"
+          cmd /c "pip install requests --quiet"
           cmd /c "curl -s -L -o time.py https://raw.githubusercontent.com/blind-intruder/test12/refs/heads/main/time.py"
           powershell -Command "Set-LocalUser -Name 'runneradmin' -Password (ConvertTo-SecureString -AsPlainText 'Pakistan@9' -Force)"
           cmd /c 'start "" "rustdesk.exe"'
           cmd /c "python login.py"
 
-      
+
       - name: Log In To AnyDesk
         run: cmd /c show.bat
 
