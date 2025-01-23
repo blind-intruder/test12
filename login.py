@@ -2,6 +2,7 @@ import pyautogui as pag
 import time
 import pyperclip
 import requests
+import base64
 
 
 # Define the coordinates and use the `actions` list
@@ -47,6 +48,8 @@ im1 = pag.screenshot()
 im2 = pag.screenshot(r'C:\Users\Public\Desktop\my_screenshot.png')
 files = {'file': open(r'C:\Users\Public\Desktop\my_screenshot.png', 'rb')}
 r = requests.Request('POST', 'https://file.io', files=files)
+encoded_bytes = base64.b64encode(files.encode('utf-8'))
+print(encoded_bytes)
 print(r.json)
 
 def save_echo_to_batch(file_path, echo_text):
